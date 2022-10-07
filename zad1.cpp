@@ -8,6 +8,8 @@
 #include <windows.h>
 #define ARGS_SIZE 512
 
+// need run as admin idk why 
+
 using mojamapa_t = std::map<std::string, DWORD*>;
 using mojafunkcja_t = std::function<double(DWORD*)>;
 void wypisz(mojamapa_t mapa, mojafunkcja_t fun)
